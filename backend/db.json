@@ -26,7 +26,15 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [],
+      "scrapedMaterials": [
+        {
+          "title": "Is Agile Coach Camp for You?",
+          "url": "https://agilealliance.org/is-agile-coach-camp-for-you/",
+          "summary": " Skip to content Is Agile Coach Camp for You? June 17, 2026 Community, People Ricardo Abella Sarmiento For years, I was fascinated by TED Talks, which I always found creative and energizing. As both an attendee and a member of several organizing teams, I had the opportunity to meet interesting peopl...",
+          "source": "Agile Alliance Blog",
+          "date": "6/18/2026"
+        }
+      ],
       "quiz": [
         {
           "question": "Which of the following best describes the primary relationship between an RTE and the teams on the Agile Release Train?",
@@ -190,7 +198,15 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [],
+      "scrapedMaterials": [
+        {
+          "title": "The Underrated Skill of Intentional Observation",
+          "url": "https://agilealliance.org/the-underrated-skill-of-intentional-observation/",
+          "summary": " Skip to content The Underrated Skill of Intentional Observation June 11, 2026 Mindset Ronald Castellon During my Scrum master training, I was taught that my goal was to help the team become Agile. That involved helping remove blockers and obstacles, and coaching the team to become self-managed and ...",
+          "source": "Agile Alliance Blog",
+          "date": "6/11/2026"
+        }
+      ],
       "quiz": [
         {
           "question": "Who are the three primary roles that form the leadership triad of an Agile Release Train?",
@@ -786,6 +802,13 @@
           "summary": "The RTE is a coach to Scrum Masters. Help them move beyond basic scrum ceremonies to focus on WIP limits, cumulative flow, and blockages.",
           "source": "Agile Insights Library (Scraped)",
           "date": "7/13/2026"
+        },
+        {
+          "title": "Case Study: Strengthening Scrum Master Leadership Through Scenario-Based Discussion",
+          "url": "https://agilealliance.org/case-study-strengthening-scrum-master-leadership-through-scenario-based-discussion/",
+          "summary": " Skip to content Case Study: Strengthening Scrum Master Leadership Through Scenario-Based Discussion March 17, 2026 Mindset, People Joe Foley This Agile case study is drawn from the Agile Experience Report “Inventing and Implementing ‘The Scrum Master Dilemma Game'” by Charlotte Frandsen. Nykredit, ...",
+          "source": "Agile Alliance Blog",
+          "date": "3/18/2026"
         }
       ],
       "quiz": [
@@ -1193,6 +1216,13 @@
     "cronSchedule": "*/30 * * * *"
   },
   "scrapeLogs": [
+    {
+      "timestamp": "2026-07-13T08:38:01.941Z",
+      "status": "Success",
+      "articlesFound": 3,
+      "articlesAdded": 3,
+      "message": "Successfully scraped and mapped 3 articles to study schedule."
+    },
     {
       "timestamp": "2026-07-13T08:30:05.578Z",
       "status": "No New Content",
