@@ -96,12 +96,11 @@ function scheduleScraperJob() {
     activeCronJob = cron.schedule(cronSchedule, async () => {
       console.log(`[Cron Task] Triggering automated scrape. Schedule: ${cronSchedule}`);
       try {
-        const log = await runScraper();
-        reloadCache(); // Sync cache with scraper disk updates
+        const dbData = getDb();
+        if (!dbData) return;
+        const log = await runScraper(dbData);
         console.log(`[Cron Task] Scrape completed. Status: ${log.status}, Added: ${log.articlesAdded}`);
-        if (log.articlesAdded > 0) {
-          triggerGitSync(); // Auto push if scraper added articles
-        }
+        saveDb(dbData);
       } catch (err) {
         console.error("[Cron Task] Failed to run automated scraper:", err);
       }
@@ -191,11 +190,12 @@ app.post('/api/lessons/reset', (req, res) => {
 // Trigger scraper manually
 app.post('/api/scrape', async (req, res) => {
   try {
-    const log = await runScraper();
-    reloadCache(); // Sync cache with scraper disk updates
-    if (log.articlesAdded > 0) {
-      triggerGitSync(); // Auto push if new content is mapped
+    const dbData = getDb();
+    if (!dbData) {
+      return res.status(500).json({ error: "Database unavailable." });
     }
+    const log = await runScraper(dbData);
+    saveDb(dbData);
     res.json(log);
   } catch (err) {
     console.error("Manual scraper trigger failed:", err);

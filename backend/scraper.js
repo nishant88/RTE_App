@@ -98,17 +98,12 @@ function findBestDayMatch(title, content, days) {
   return bestDayId;
 }
 
-export async function runScraper() {
+export async function runScraper(dbData) {
   console.log("Starting web scraper job...");
   
-  // Read current database state
-  let dbData;
-  try {
-    const rawData = fs.readFileSync(dbPath, 'utf8');
-    dbData = JSON.parse(rawData);
-  } catch (err) {
-    console.error("Failed to read db.json inside scraper:", err);
-    return { status: "Error", message: "Failed to read database." };
+  if (!dbData) {
+    console.error("No database reference passed to runScraper.");
+    return { status: "Error", message: "Database reference is null." };
   }
 
   const { targetFeeds, keywords } = dbData.scraperConfig;
@@ -161,7 +156,17 @@ export async function runScraper() {
   });
 
   const feedResults = await Promise.all(feedPromises);
-  const matchedArticles = feedResults.flat();
+  const allMatched = feedResults.flat();
+  
+  // Filter for unique URLs to avoid duplicate concurrent parses (race condition fix)
+  const uniqueUrls = new Set();
+  const matchedArticles = [];
+  for (const item of allMatched) {
+    if (!uniqueUrls.has(item.url)) {
+      uniqueUrls.add(item.url);
+      matchedArticles.push(item);
+    }
+  }
   
   // 2. Fetch full article text in parallel
   console.log(`Scraping full texts for ${matchedArticles.length} matched articles concurrently...`);
@@ -247,15 +252,6 @@ export async function runScraper() {
   // Keep logs at a reasonable size (last 50 runs)
   if (dbData.scrapeLogs.length > 50) {
     dbData.scrapeLogs.pop();
-  }
-
-  // Save database
-  try {
-    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2), 'utf8');
-    console.log("Database updated successfully by Scraper!");
-  } catch (writeErr) {
-    console.error("Failed to save db.json in scraper:", writeErr);
-    return { status: "Error", message: "Failed to write database file." };
   }
 
   return logEntry;
