@@ -1194,6 +1194,13 @@
   },
   "scrapeLogs": [
     {
+      "timestamp": "2026-07-13T08:30:05.578Z",
+      "status": "No New Content",
+      "articlesFound": 0,
+      "articlesAdded": 0,
+      "message": "Scraper ran successfully, but no new unique articles were found."
+    },
+    {
       "timestamp": "2026-07-13T08:00:03.592Z",
       "status": "No New Content",
       "articlesFound": 0,
