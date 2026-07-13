@@ -176,11 +176,11 @@ export default function App() {
     return (
       <div className="loading-screen" style={{
         display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw',
-        justifyContent: 'center', alignItems: 'center', backgroundColor: '#0b0f17', color: '#f8fafc'
+        justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)'
       }}>
-        <RefreshCw className="animate-spin-slow" size={48} style={{ color: '#22d3ee', marginBottom: '16px' }} />
+        <RefreshCw className="animate-spin-slow" size={48} style={{ color: 'var(--primary)', marginBottom: '16px' }} />
         <h2 style={{ fontFamily: 'Outfit', fontWeight: 600 }}>Syncing SAFe RTE Study Planner...</h2>
-        <p style={{ color: '#94a3b8', fontSize: '14px', marginTop: '8px' }}>Verifying local database connectivity...</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginTop: '8px' }}>Verifying local database connectivity...</p>
       </div>
     );
   }
@@ -189,11 +189,11 @@ export default function App() {
     return (
       <div className="error-screen" style={{
         display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw',
-        justifyContent: 'center', alignItems: 'center', backgroundColor: '#0b0f17', color: '#f8fafc', padding: '24px', textAlign: 'center'
+        justifyContent: 'center', alignItems: 'center', backgroundColor: 'var(--bg-main)', color: 'var(--text-main)', padding: '24px', textAlign: 'center'
       }}>
-        <AlertCircle size={64} style={{ color: '#f87171', marginBottom: '24px' }} />
+        <AlertCircle size={64} style={{ color: 'var(--error)', marginBottom: '24px' }} />
         <h2 style={{ fontFamily: 'Outfit', fontWeight: 600 }}>Connection Error</h2>
-        <p style={{ color: '#94a3b8', maxWidth: '500px', margin: '12px 0 24px' }}>
+        <p style={{ color: 'var(--text-muted)', maxWidth: '500px', margin: '12px 0 24px' }}>
           Unable to establish connection with the backend service. Ensure the Express server is running on port 3001.
         </p>
         <button onClick={() => { setLoading(true); fetchData(); }} className="glow-btn">
