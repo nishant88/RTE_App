@@ -13,17 +13,17 @@
         {
           "id": "1_1",
           "text": "Explain the difference between a traditional Project Manager and a SAFe RTE.",
-          "completed": false
+          "completed": true
         },
         {
           "id": "1_2",
           "text": "Identify the 4 main domains of the SAFe RTE exam syllabus.",
-          "completed": false
+          "completed": true
         },
         {
           "id": "1_3",
           "text": "Understand the concept of servant leadership in the context of scaled agile.",
-          "completed": false
+          "completed": true
         }
       ],
       "scrapedMaterials": [
