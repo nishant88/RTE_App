@@ -3,7 +3,6 @@ import {
   BookOpen, 
   CheckCircle2, 
   Circle, 
-  Clock, 
   Database, 
   HelpCircle, 
   Layers, 
@@ -556,7 +555,7 @@ export default function App() {
                   }}
                 >
                   {/* Complete Indicator */}
-                  <div style={{ display: 'flex', shrink: 0 }}>
+                  <div style={{ display: 'flex', flexShrink: 0 }}>
                     {isDayComplete ? (
                       <CheckCircle2 size={18} style={{ color: 'var(--success)' }} />
                     ) : isDayInProgress ? (
@@ -849,7 +848,7 @@ export default function App() {
                           checked={obj.completed}
                           onChange={() => {}} // click handled by parent container
                           style={{
-                            cursor: 'pointer', width: '18px', height: '18px', shrink: 0, marginTop: '2px',
+                            cursor: 'pointer', width: '18px', height: '18px', flexShrink: 0, marginTop: '2px',
                             accentColor: 'var(--success)'
                           }}
                         />
