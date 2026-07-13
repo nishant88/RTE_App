@@ -140,7 +140,9 @@ export default function App() {
   // key: dayId, value: index of option chosen, boolean for submission, boolean for correctness
   const [quizState, setQuizState] = useState<Record<number, { selectedIndex: number | null; submitted: boolean }>>({});
 
-  const API_BASE = 'http://localhost:3001/api';
+  const API_BASE = typeof window !== 'undefined' && window.location.hostname
+    ? `http://${window.location.hostname}:3001/api`
+    : 'http://localhost:3001/api';
 
   // Fetch all database records
   const fetchData = async (selectFirstUnfinished = false) => {
