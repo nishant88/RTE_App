@@ -5,6 +5,7 @@ import path from 'path';
 import cron from 'node-cron';
 import { fileURLToPath } from 'url';
 import { runScraper } from './scraper.js';
+import { exec } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,10 +28,28 @@ function getDb() {
   }
 }
 
+let gitSyncTimeout = null;
+function triggerGitSync() {
+  if (gitSyncTimeout) {
+    clearTimeout(gitSyncTimeout);
+  }
+  gitSyncTimeout = setTimeout(() => {
+    console.log("[Git Sync] Initiating auto commit & push...");
+    exec('git add backend/db.json && git commit -m "chore: auto-sync study progress and scraper updates" && git push', (err, stdout, stderr) => {
+      if (err) {
+        console.error("[Git Sync] Failed to auto-push:", err.message);
+        return;
+      }
+      console.log("[Git Sync] Succeeded:\n", stdout || "Pushed successfully.");
+    });
+  }, 5000); // 5-second debounce window to batch rapid updates
+}
+
 // Helper function to write database
 function saveDb(data) {
   try {
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
+    triggerGitSync(); // Auto push after local save
     return true;
   } catch (err) {
     console.error("Error writing db.json:", err);
@@ -59,6 +78,9 @@ function scheduleScraperJob() {
       try {
         const log = await runScraper();
         console.log(`[Cron Task] Scrape completed. Status: ${log.status}, Added: ${log.articlesAdded}`);
+        if (log.articlesAdded > 0) {
+          triggerGitSync(); // Auto push if scraper added articles
+        }
       } catch (err) {
         console.error("[Cron Task] Failed to run automated scraper:", err);
       }
@@ -149,9 +171,12 @@ app.post('/api/lessons/reset', (req, res) => {
 app.post('/api/scrape', async (req, res) => {
   try {
     const log = await runScraper();
+    if (log.articlesAdded > 0) {
+      triggerGitSync(); // Auto push if new content is mapped
+    }
     res.json(log);
   } catch (err) {
-    console.error("Manual scrape trigger failed:", err);
+    console.error("Manual scraper trigger failed:", err);
     res.status(500).json({ error: "Scraping failed: " + err.message });
   }
 });
