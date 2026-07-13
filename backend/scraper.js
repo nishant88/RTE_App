@@ -125,58 +125,74 @@ export async function runScraper() {
     });
   });
 
-  const scrapedItems = [];
-
-  // 1. Scrape real feeds
-  for (const feed of activeFeeds) {
+  // 1. Fetch active feeds in parallel
+  console.log(`Fetching ${activeFeeds.length} active feeds in parallel...`);
+  const feedPromises = activeFeeds.map(async (feed) => {
     try {
-      console.log(`Fetching feed: ${feed.name} (${feed.url})`);
-      const parsedFeed = await parser.parseURL(feed.url);
+      const response = await axios.get(feed.url, { 
+        timeout: 5000, 
+        headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' } 
+      });
+      const parsedFeed = await parser.parseString(response.data);
       
+      const matchedFromFeed = [];
       for (const item of parsedFeed.items) {
         const link = item.link;
         if (processedUrls.has(link)) continue;
         
-        // Keyword checking
         const titleMatch = keywords.some(kw => item.title?.toLowerCase().includes(kw.toLowerCase()));
         const snippetMatch = keywords.some(kw => item.contentSnippet?.toLowerCase().includes(kw.toLowerCase()));
         
         if (titleMatch || snippetMatch) {
-          articlesFound++;
-          
-          // Scrape full article text using Axios and Cheerio (with error handling)
-          let fullContent = item.contentSnippet || "";
-          try {
-            const response = await axios.get(link, { timeout: 8000 });
-            const $ = cheerio.load(response.data);
-            
-            // Remove scripts, stylesheets, and navigation elements
-            $('script, style, nav, footer, header, noscript, .nav, .footer').remove();
-            
-            // Extract text from standard article/main containers
-            const articleText = $('article, main, .post-content, .entry-content, body').text();
-            if (articleText.trim()) {
-              fullContent = articleText.replace(/\s+/g, ' ').substring(0, 1200); // Grab first 1200 chars
-            }
-          } catch (scrapeErr) {
-            console.warn(`Could not scrape full text for ${link}, using snippet instead:`, scrapeErr.message);
-          }
-
-          scrapedItems.push({
+          matchedFromFeed.push({
             title: item.title,
             url: link,
-            summary: fullContent.substring(0, 300) + (fullContent.length > 300 ? "..." : ""),
-            fullText: fullContent,
-            source: feed.name,
-            date: item.pubDate || new Date().toISOString()
+            contentSnippet: item.contentSnippet || "",
+            pubDate: item.pubDate || new Date().toISOString(),
+            feedName: feed.name
           });
-          processedUrls.add(link);
         }
       }
-    } catch (feedErr) {
-      console.error(`Error processing feed ${feed.name}:`, feedErr.message);
+      return matchedFromFeed;
+    } catch (err) {
+      console.warn(`[Scraper] Feed "${feed.name}" failed:`, err.message);
+      return [];
     }
-  }
+  });
+
+  const feedResults = await Promise.all(feedPromises);
+  const matchedArticles = feedResults.flat();
+  
+  // 2. Fetch full article text in parallel
+  console.log(`Scraping full texts for ${matchedArticles.length} matched articles concurrently...`);
+  const fullTextPromises = matchedArticles.map(async (item) => {
+    let fullContent = item.contentSnippet || "";
+    try {
+      const response = await axios.get(item.url, { timeout: 4000 });
+      const $ = cheerio.load(response.data);
+      $('script, style, nav, footer, header, noscript, .nav, .footer').remove();
+      const articleText = $('article, main, .post-content, .entry-content, body').text();
+      if (articleText.trim()) {
+        fullContent = articleText.replace(/\s+/g, ' ').substring(0, 1200);
+      }
+    } catch (scrapeErr) {
+      // Fallback silently to snippet on scrape timeouts
+    }
+    
+    processedUrls.add(item.url);
+    articlesFound++;
+    
+    return {
+      title: item.title,
+      url: item.url,
+      summary: fullContent.substring(0, 300) + (fullContent.length > 300 ? "..." : ""),
+      fullText: fullContent,
+      source: item.feedName,
+      date: item.pubDate
+    };
+  });
+
+  const scrapedItems = await Promise.all(fullTextPromises);
 
   // 2. If no new articles found from live feeds (or if feeds were blocked/down),
   // ingest mock articles to ensure the application works dynamically!

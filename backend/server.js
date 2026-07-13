@@ -17,15 +17,32 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Helper function to read database
-function getDb() {
+let dbCache = null;
+function loadCache() {
   try {
     const raw = fs.readFileSync(dbPath, 'utf8');
-    return JSON.parse(raw);
+    dbCache = JSON.parse(raw);
+    console.log("[Cache] Initialized database cache in memory successfully.");
   } catch (err) {
-    console.error("Error reading db.json:", err);
-    return null;
+    console.error("[Cache] Critical error: Could not initialize cache from db.json:", err.message);
+    dbCache = { days: [], scraperConfig: { targetFeeds: [], keywords: [], cronSchedule: "*/30 * * * *" }, scrapeLogs: [] };
   }
+}
+loadCache();
+
+function reloadCache() {
+  try {
+    const raw = fs.readFileSync(dbPath, 'utf8');
+    dbCache = JSON.parse(raw);
+    console.log("[Cache] Database cache reloaded from disk.");
+  } catch (err) {
+    console.error("[Cache] Failed to reload database cache from disk:", err.message);
+  }
+}
+
+// Helper function to read database
+function getDb() {
+  return dbCache;
 }
 
 let gitSyncTimeout = null;
@@ -35,7 +52,7 @@ function triggerGitSync() {
   }
   gitSyncTimeout = setTimeout(() => {
     console.log("[Git Sync] Initiating auto commit & push...");
-    exec('git add backend/db.json && git commit -m "chore: auto-sync study progress and scraper updates" && git push', (err, stdout, stderr) => {
+    exec('git add db.json && git commit -m "chore: auto-sync study progress and scraper updates" && git push', (err, stdout, stderr) => {
       if (err) {
         console.error("[Git Sync] Failed to auto-push:", err.message);
         return;
@@ -47,14 +64,17 @@ function triggerGitSync() {
 
 // Helper function to write database
 function saveDb(data) {
-  try {
-    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
-    triggerGitSync(); // Auto push after local save
-    return true;
-  } catch (err) {
-    console.error("Error writing db.json:", err);
-    return false;
-  }
+  dbCache = data;
+  
+  // Non-blocking asynchronous file write
+  fs.writeFile(dbPath, JSON.stringify(dbCache, null, 2), 'utf8', (err) => {
+    if (err) {
+      console.error("[Cache] Async write to db.json failed:", err.message);
+    } else {
+      triggerGitSync();
+    }
+  });
+  return true;
 }
 
 // Cron job variable to hold current job reference
@@ -77,6 +97,7 @@ function scheduleScraperJob() {
       console.log(`[Cron Task] Triggering automated scrape. Schedule: ${cronSchedule}`);
       try {
         const log = await runScraper();
+        reloadCache(); // Sync cache with scraper disk updates
         console.log(`[Cron Task] Scrape completed. Status: ${log.status}, Added: ${log.articlesAdded}`);
         if (log.articlesAdded > 0) {
           triggerGitSync(); // Auto push if scraper added articles
@@ -171,6 +192,7 @@ app.post('/api/lessons/reset', (req, res) => {
 app.post('/api/scrape', async (req, res) => {
   try {
     const log = await runScraper();
+    reloadCache(); // Sync cache with scraper disk updates
     if (log.articlesAdded > 0) {
       triggerGitSync(); // Auto push if new content is mapped
     }

@@ -218,13 +218,18 @@ export default function App() {
     "Exploring the RTE Role"
   ];
 
-  // Filtering days list
-  const filteredDays = data.days.filter(day => {
-    if (domainFilter === 'All') return true;
-    return day.domain === domainFilter;
-  });
+  // Filtering days list (memoized to avoid redundant calculations)
+  const filteredDays = React.useMemo(() => {
+    return data.days.filter(day => {
+      if (domainFilter === 'All') return true;
+      return day.domain === domainFilter;
+    });
+  }, [data.days, domainFilter]);
 
-  const selectedDay = data.days.find(d => d.id === selectedDayId) || data.days[0];
+  // Memoized current study day selection
+  const selectedDay = React.useMemo(() => {
+    return data.days.find(d => d.id === selectedDayId) || data.days[0];
+  }, [data.days, selectedDayId]);
 
   // Toggling objective checklist item
   const handleToggleObjective = async (dayId: number, objId: string, currentCompleted: boolean) => {
@@ -434,7 +439,15 @@ export default function App() {
     }));
   };
 
-  const searchResults = getSearchResults();
+  // Search library query lookup (memoized)
+  const searchResults = React.useMemo(() => {
+    return getSearchResults();
+  }, [searchQuery, data.days]);
+
+  // Parse lesson markdown to HTML (memoized to avoid parsing on simple state triggers)
+  const memoizedLessonHtml = React.useMemo(() => {
+    return renderMarkdownToHtml(selectedDay.lessonContent);
+  }, [selectedDay.id, selectedDay.lessonContent]);
 
   return (
     <div className="app-container">
@@ -711,7 +724,7 @@ export default function App() {
                   
                   <div 
                     className="markdown-body"
-                    dangerouslySetInnerHTML={{ __html: renderMarkdownToHtml(selectedDay.lessonContent) }}
+                    dangerouslySetInnerHTML={{ __html: memoizedLessonHtml }}
                   />
                 </div>
 
