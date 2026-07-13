@@ -1,0 +1,202 @@
+import express from 'express';
+import cors from 'cors';
+import fs from 'fs';
+import path from 'path';
+import cron from 'node-cron';
+import { fileURLToPath } from 'url';
+import { runScraper } from './scraper.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const dbPath = path.join(__dirname, 'db.json');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(cors());
+app.use(express.json());
+
+// Helper function to read database
+function getDb() {
+  try {
+    const raw = fs.readFileSync(dbPath, 'utf8');
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error("Error reading db.json:", err);
+    return null;
+  }
+}
+
+// Helper function to write database
+function saveDb(data) {
+  try {
+    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
+    return true;
+  } catch (err) {
+    console.error("Error writing db.json:", err);
+    return false;
+  }
+}
+
+// Cron job variable to hold current job reference
+let activeCronJob = null;
+
+// Function to schedule/reschedule the scraper cron job
+function scheduleScraperJob() {
+  const dbData = getDb();
+  if (!dbData) return;
+
+  const cronSchedule = dbData.scraperConfig.cronSchedule || '*/30 * * * *';
+  
+  if (activeCronJob) {
+    activeCronJob.stop();
+    console.log("Stopped existing cron job.");
+  }
+
+  try {
+    activeCronJob = cron.schedule(cronSchedule, async () => {
+      console.log(`[Cron Task] Triggering automated scrape. Schedule: ${cronSchedule}`);
+      try {
+        const log = await runScraper();
+        console.log(`[Cron Task] Scrape completed. Status: ${log.status}, Added: ${log.articlesAdded}`);
+      } catch (err) {
+        console.error("[Cron Task] Failed to run automated scraper:", err);
+      }
+    });
+    console.log(`Scheduled automated web scraper with expression: "${cronSchedule}"`);
+  } catch (err) {
+    console.error(`Failed to schedule cron with expression "${cronSchedule}":`, err.message);
+  }
+}
+
+// --- API ENDPOINTS ---
+
+// Get all lessons, config, and logs
+app.get('/api/lessons', (req, res) => {
+  const db = getDb();
+  if (!db) {
+    return res.status(500).json({ error: "Could not retrieve study records." });
+  }
+  res.json(db);
+});
+
+// Toggle objective checklist item
+app.post('/api/lessons/:dayId/objectives/:objId/toggle', (req, res) => {
+  const dayId = parseInt(req.params.dayId, 10);
+  const objId = req.params.objId;
+  const { completed } = req.body;
+
+  const db = getDb();
+  if (!db) {
+    return res.status(500).json({ error: "Could not load database." });
+  }
+
+  const day = db.days.find(d => d.id === dayId);
+  if (!day) {
+    return res.status(404).json({ error: `Day ${dayId} not found.` });
+  }
+
+  const objective = day.objectives.find(o => o.id === objId);
+  if (!objective) {
+    return res.status(404).json({ error: `Objective ${objId} not found.` });
+  }
+
+  objective.completed = completed !== undefined ? completed : !objective.completed;
+
+  // Recalculate day completion if all objectives are completed
+  const allDone = day.objectives.every(o => o.completed);
+  // Optional flag: we can check how the UI manages it, but let's persist the state
+  
+  if (saveDb(db)) {
+    res.json({ success: true, dayId, objId, completed: objective.completed, allDone });
+  } else {
+    res.status(500).json({ error: "Failed to save checklist state." });
+  }
+});
+
+// Reset all progress
+app.post('/api/lessons/reset', (req, res) => {
+  const db = getDb();
+  if (!db) {
+    return res.status(500).json({ error: "Could not load database." });
+  }
+
+  db.days.forEach(day => {
+    day.objectives.forEach(obj => {
+      obj.completed = false;
+    });
+    day.scrapedMaterials = [];
+  });
+
+  db.scrapeLogs = [
+    {
+      timestamp: new Date().toISOString(),
+      status: "Reset",
+      articlesFound: 0,
+      articlesAdded: 0,
+      message: "Study tracker progress and scraped materials reset by user."
+    }
+  ];
+
+  if (saveDb(db)) {
+    res.json({ success: true, message: "Progress reset successfully." });
+  } else {
+    res.status(500).json({ error: "Failed to reset database progress." });
+  }
+});
+
+// Trigger scraper manually
+app.post('/api/scrape', async (req, res) => {
+  try {
+    const log = await runScraper();
+    res.json(log);
+  } catch (err) {
+    console.error("Manual scrape trigger failed:", err);
+    res.status(500).json({ error: "Scraping failed: " + err.message });
+  }
+});
+
+// Save Scraper Configuration
+app.post('/api/scraper-config', (req, res) => {
+  const { targetFeeds, keywords, cronSchedule } = req.body;
+
+  const db = getDb();
+  if (!db) {
+    return res.status(500).json({ error: "Database unavailable." });
+  }
+
+  if (targetFeeds) db.scraperConfig.targetFeeds = targetFeeds;
+  if (keywords) db.scraperConfig.keywords = keywords;
+  
+  let scheduleChanged = false;
+  if (cronSchedule && cronSchedule !== db.scraperConfig.cronSchedule) {
+    if (!cron.validate(cronSchedule)) {
+      return res.status(400).json({ error: "Invalid cron expression format." });
+    }
+    db.scraperConfig.cronSchedule = cronSchedule;
+    scheduleChanged = true;
+  }
+
+  if (saveDb(db)) {
+    if (scheduleChanged) {
+      scheduleScraperJob(); // Reschedule with new cron string
+    }
+    res.json({ success: true, config: db.scraperConfig });
+  } else {
+    res.status(500).json({ error: "Failed to save configurations." });
+  }
+});
+
+// Start the Express Server
+app.listen(PORT, () => {
+  console.log(`Backend server active on http://localhost:${PORT}`);
+  
+  // Seed verification check
+  const db = getDb();
+  if (!db) {
+    console.warn("WARNING: Database is empty. Please run 'node seed.js' first.");
+  } else {
+    console.log(`Loaded ${db.days.length} curriculum days successfully.`);
+    scheduleScraperJob(); // Run scheduler
+  }
+});

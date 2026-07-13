@@ -1,0 +1,1211 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "title": "RTE Role & Responsibilities Overview",
+      "domain": "Exploring the RTE Role",
+      "duration": "45 mins",
+      "difficulty": "Beginner",
+      "examWeight": "15%",
+      "description": "Understand the core responsibilities, behaviors, and standard organizational position of the Release Train Engineer in SAFe.",
+      "lessonContent": "\n### Key Concepts of the RTE Role\nThe Release Train Engineer (RTE) is a **servant leader** and coach for the Agile Release Train (ART). Their primary facilitator role is to steer the train, run standard events, clear impediments, and coach teams on SAFe practices.\n\n#### Core Responsibilities\n1. **Facilitate ART Events**: Keep SAFe rituals running smoothly, including PI Planning, Scrum of Scrums, PO Sync, System Demos, and Inspect & Adapt.\n2. **Manage Risks and Dependencies**: Promote collaboration across Scrum Masters, Product Owners, and external stakeholders.\n3. **Escalate and Track Impediments**: Resolve blockers that teams cannot resolve on their own.\n4. **Drive Relentless Improvement**: Use metrics and Inspect & Adapt workshops to continuously improve flow.\n\n#### RTE as a Servant Leader\nUnlike traditional project managers, the RTE does not direct or command. Instead, they:\n- Listen and support teams.\n- Create an environment of trust and mutual respect.\n- Help teams grow, self-organize, and take accountability.\n- Emphasize systems thinking over localized optimization.\n",
+      "objectives": [
+        {
+          "id": "1_1",
+          "text": "Explain the difference between a traditional Project Manager and a SAFe RTE.",
+          "completed": false
+        },
+        {
+          "id": "1_2",
+          "text": "Identify the 4 main domains of the SAFe RTE exam syllabus.",
+          "completed": false
+        },
+        {
+          "id": "1_3",
+          "text": "Understand the concept of servant leadership in the context of scaled agile.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Which of the following best describes the primary relationship between an RTE and the teams on the Agile Release Train?",
+          "options": [
+            "The RTE assigns tasks and reviews daily sprint burndowns.",
+            "The RTE serves as a command-and-control authority to hit dates.",
+            "The RTE acts as a servant leader and coach to optimize flow and resolve impediments.",
+            "The RTE replaces the Scrum Masters to directly manage developer tasks."
+          ],
+          "answerIndex": 2,
+          "explanation": "The RTE is a servant leader who focuses on facilitating events, resolving blockers, and coaching teams, rather than managing tasks directly."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Servant Leadership & Empathy in SAFe",
+      "domain": "Serving the Agile Release Train",
+      "duration": "50 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "30%",
+      "description": "Deep dive into servant leadership attributes, active listening, and how to lead without positional authority.",
+      "lessonContent": "\n### Attributes of a Servant Leader\nTo succeed, an RTE must lead through influence, empathy, and coaching rather than authority.\n\n#### Key Principles of Servant Leadership\n- **Active Listening**: Listening to understand, not just to reply.\n- **Empathy**: Recognizing and respecting the feelings and perspectives of team members.\n- **Healing**: Helping team members overcome organizational hurdles and professional friction.\n- **Stewardship**: Holding the trust and resources of the organization with care.\n- **Commitment to the Growth of People**: Enabling everyone on the train to acquire new skills.\n- **Building Community**: Fostering collaboration and shared identity across all teams.\n\n#### Leading without Positional Authority\nAn RTE rarely has direct HR reports. To drive alignment, they must:\n1. Build strong personal relationships.\n2. Communicate the 'Why' behind decisions.\n3. Facilitate peer-to-peer consensus rather than enforcing top-down decisions.\n4. Focus on transparency, making metrics and bottlenecks visible to all.\n",
+      "objectives": [
+        {
+          "id": "2_1",
+          "text": "Define the core attributes of a servant leader according to Robert Greenleaf.",
+          "completed": true
+        },
+        {
+          "id": "2_2",
+          "text": "Apply empathy mapping techniques to resolve a conflict between two Scrum Masters.",
+          "completed": false
+        },
+        {
+          "id": "2_3",
+          "text": "Describe how to facilitate a consensus-building meeting using Decider/Moderator dynamics.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "An RTE faces resistance from a senior manager who prefers traditional phase-gate milestones over Agile milestones. How should the RTE handle this?",
+          "options": [
+            "File an HR complaint about non-cooperation.",
+            "Arrange a meeting to empathize, show how SAFe milestones mitigate risk earlier through working software, and coach them on Lean-Agile metrics.",
+            "Ignore the manager's concerns and proceed with SAFe events anyway.",
+            "Order the teams to stop reporting all traditional metrics immediately."
+          ],
+          "answerIndex": 1,
+          "explanation": "An RTE uses servant leadership, coaching, and empathy to build alignment. Explaining the 'why' and demonstrating value through working software is the key to influencing stakeholders."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "SAFe Lean-Agile Principles (Part 1)",
+      "domain": "Applying SAFe Principles",
+      "duration": "60 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "22%",
+      "description": "Explore the first five SAFe Lean-Agile Principles and how the RTE applies them to improve ART performance.",
+      "lessonContent": "\n### SAFe Lean-Agile Principles (1 to 5)\nRTEs must base every decision on Lean-Agile principles.\n\n#### Principle 1: Take an Economic View\n- Decison-making happens within an economic framework.\n- Understand trade-offs between lead time, product cost, value, and development cost.\n- RTE context: Guide the ART to deliver value early and often (using WSJF).\n\n#### Principle 2: Apply Systems Thinking\n- Understand that the system includes the product, the organization, and the process.\n- Optimizing a single component (local optimization) does not optimize the whole.\n- RTE context: Look at the whole value stream and resolve bottlenecks across teams.\n\n#### Principle 3: Assume Variability; Preserve Options\n- Traditional requirements lock in scope too early, leading to bad compromises.\n- Maintain multiple design options (Set-Based Design) as long as practical to reduce risk.\n\n#### Principle 4: Build Incrementally with Fast, Integrated Learning Cycles\n- Develop in short iterations to get quick feedback.\n- Reduce risk through Plan-Do-Check-Adjust (PDCA) cycles.\n\n#### Principle 5: Base Milestones on Objective Evaluation of Working Systems\n- Gauge progress using real working software, not speculative status reports.\n- RTE context: The System Demo at the end of each iteration is the objective milestone.\n",
+      "objectives": [
+        {
+          "id": "3_1",
+          "text": "State the first five SAFe Lean-Agile Principles from memory.",
+          "completed": false
+        },
+        {
+          "id": "3_2",
+          "text": "Contrast local optimization vs. systemic optimization on an Agile Release Train.",
+          "completed": false
+        },
+        {
+          "id": "3_3",
+          "text": "Explain how the System Demo supports Principle 5.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "If an RTE focuses solely on speeding up a single team's coding speed, ignoring delays in security reviews and deployment, what principle are they violating?",
+          "options": [
+            "Assume variability; preserve options",
+            "Apply Systems Thinking",
+            "Take an economic view",
+            "Build incrementally with fast, integrated learning cycles"
+          ],
+          "answerIndex": 1,
+          "explanation": "By focusing only on one team's velocity and ignoring the broader deployment delays, they are failing to analyze the system as a whole (violating Systems Thinking)."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "SAFe Lean-Agile Principles (Part 2)",
+      "domain": "Applying SAFe Principles",
+      "duration": "60 mins",
+      "difficulty": "Advanced",
+      "examWeight": "22%",
+      "description": "Explore SAFe Principles 6 to 10: flow, cadence, decentralized decision-making, and organizing around value.",
+      "lessonContent": "\n### SAFe Lean-Agile Principles (6 to 10)\n\n#### Principle 6: Visualize and Limit WIP, Reduce Batch Sizes, and Manage Queue Lengths\n- **WIP Limits**: Prevents overloading the system and makes bottlenecks visible.\n- **Small Batches**: Accelerates feedback and delivery speed.\n- **Queue Length**: Long queues increase wait times. The RTE monitors cumulative flow diagrams to manage this.\n\n#### Principle 7: Apply Cadence, Synchronize with Cross-Domain Planning\n- **Cadence**: Predictable rhythm for development.\n- **Synchronization**: Aligning different trains and teams to coordinate work at the same time.\n- RTE context: Keeps the ART planning together and executing in sync.\n\n#### Principle 8: Unlock the Intrinsic Motivation of Knowledge Workers\n- Autonomy, mastery, and purpose drive modern workers.\n- Avoid micromanagement. Provide clear goals and trust teams.\n\n#### Principle 9: Decentralize Decision-Making\n- Centralize: Strategic, long-term, and high economies of scale decisions.\n- Decentralize: Frequent, local, and time-critical decisions.\n- RTE context: Empower teams to solve local conflicts and plan their iterations.\n\n#### Principle 10: Organize Around Value\n- Shift from functional silos (QA, Dev, DB) to cross-functional virtual organizations (Agile Release Trains) structured directly to deliver customer value.\n",
+      "objectives": [
+        {
+          "id": "4_1",
+          "text": "Explain Little's Law and its relationship to queue lengths and lead time.",
+          "completed": false
+        },
+        {
+          "id": "4_2",
+          "text": "Categorize decisions that should be centralized vs. decentralized.",
+          "completed": false
+        },
+        {
+          "id": "4_3",
+          "text": "Define what it means to 'organize around value' versus organizing by functional silo.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Which of the following decisions should be CENTRALIZED by the leadership team instead of decentralized?",
+          "options": [
+            "Selecting a team's internal testing library.",
+            "Choosing whether to deploy a hotfix to a local bug.",
+            "Making a major shift in enterprise technology strategy (e.g. migrating all platforms to AWS).",
+            "Resolving an integration conflict between two Scrum teams."
+          ],
+          "answerIndex": 2,
+          "explanation": "Decentralized decision-making is for frequent, local, time-critical issues. Strategic, high-impact decisions that offer significant economies of scale, like cloud migration strategy, should be centralized."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Agile Release Train (ART) Structure",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Beginner",
+      "examWeight": "30%",
+      "description": "Understand how the Agile Release Train is structured, its size limits, and how it aligns to Value Streams.",
+      "lessonContent": "\n### What is an Agile Release Train (ART)?\nAn ART is a long-lived, self-organizing team of Agile teams (typically 50 to 125 people) that, along with other stakeholders, plans, commits, executes, and deploys software together.\n\n#### Core Structure of an ART\n- **Cross-Functional**: Contains all roles needed to build, test, and deploy (Dev, QA, UX, Ops, Security).\n- **Aligned to a Common Mission**: Every team operates under a single program backlog.\n- **Synchronized Cadence**: All teams share the same start/end dates for iterations and PIs.\n- **RTE, PM, and System Architect Triad**:\n  - **RTE**: Facilitates process and execution.\n  - **Product Management**: Defines *what* gets built (backlog content).\n  - **System Architect**: Defines *how* it gets built (architecture and technology).\n\n#### Boundaries and Dunbar's Number\nThe size of an ART is limited to ~125 people. Beyond this, cognitive overload limits effective collaboration (Dunbar's number). Large solutions use multiple ARTs coordinated by a Solution Train.\n",
+      "objectives": [
+        {
+          "id": "5_1",
+          "text": "Draw the relationship between the RTE, Product Manager, and System Architect.",
+          "completed": false
+        },
+        {
+          "id": "5_2",
+          "text": "Explain the significance of Dunbar's number in scaled agile structures.",
+          "completed": false
+        },
+        {
+          "id": "5_3",
+          "text": "Differentiate between an Agile Team, an ART, and a Solution Train.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Who are the three primary roles that form the leadership triad of an Agile Release Train?",
+          "options": [
+            "Scrum Master, Product Owner, Developer",
+            "Release Train Engineer, Product Manager, System Architect",
+            "Portfolio Manager, Business Owner, QA Lead",
+            "CEO, CTO, agile coach"
+          ],
+          "answerIndex": 1,
+          "explanation": "The RTE (process), Product Management (content), and System Architect (tech) form the classic leadership triad for an ART."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Roles & Collaborations on the ART",
+      "domain": "Exploring the RTE Role",
+      "duration": "45 mins",
+      "difficulty": "Beginner",
+      "examWeight": "15%",
+      "description": "How the RTE interacts with Scrum Masters, Product Owners, Business Owners, and System Architects.",
+      "lessonContent": "\n### Collaborative Interfaces of the RTE\nSuccess as an RTE relies entirely on building strong collaborative bridges across diverse stakeholders.\n\n#### 1. RTE and Scrum Masters (SMs)\n- The RTE is the coach to the Scrum Masters on the train.\n- They sync via the **Scrum of Scrums (SoS)**.\n- The RTE helps Scrum Masters grow their capability in coaching, facilitating, and removing blockers.\n\n#### 2. RTE and Product Owners (POs) / Product Management (PM)\n- The RTE coordinates with POs and PM to ensure the backlog is refined and ready for PI Planning.\n- They sync via the **PO Sync**.\n- Together they balance development capacity between new features (PM) and technical debt/architectural runway (Architect).\n\n#### 3. RTE and Business Owners (BOs)\n- Business Owners are key stakeholders who sign off on PI objectives and assign Business Value.\n- The RTE facilitates BO interaction during PI Planning, System Demos, and Inspect & Adapt.\n",
+      "objectives": [
+        {
+          "id": "6_1",
+          "text": "Detail the collaboration model between Scrum of Scrums (SoS) and PO Sync.",
+          "completed": false
+        },
+        {
+          "id": "6_2",
+          "text": "Outline the key inputs Business Owners provide to the ART.",
+          "completed": false
+        },
+        {
+          "id": "6_3",
+          "text": "Create a communication matrix for the RTE's weekly schedule.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "How does the RTE collaborate with Product Management and System Architecture to prepare for PI planning?",
+          "options": [
+            "The RTE writes all the features and technical stories themselves.",
+            "The RTE facilitates alignment meetings to ensure the backlog features are estimated, prioritized, and fit within the architectural runway.",
+            "The RTE reviews developer timesheets to allocate capacity.",
+            "The RTE assigns feature ownership directly to individual developers."
+          ],
+          "answerIndex": 1,
+          "explanation": "The RTE acts as a facilitator, aligning PM (features) and System Architect (runway) to ensure the Program Backlog is healthy and prioritized before PI planning."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Preparing for PI Planning",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "55 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "28%",
+      "description": "Master the prerequisites, inputs, and preparation activities required to successfully launch a PI Planning event.",
+      "lessonContent": "\n### Preparing for Program Increment (PI) Planning\nPI Planning is a major 2-day event that aligns all teams on the ART. Preparation is essential.\n\n#### Three Areas of PI Readiness\n1. **Organizational Readiness**:\n   - Executive sponsor alignment.\n   - Deciding who plays the Business Owner role.\n   - Setting scope and team rosters.\n2. **Content Readiness**:\n   - The Executive Briefing (context).\n   - Product Management has top 10 features defined, refined, and prioritized in the Program Backlog.\n   - System Architect has architectural vision ready.\n3. **Facility & Logistics Readiness**:\n   - Physical space (if co-located) or virtual whiteboards (like Miro/Mural).\n   - Audio/Video setup and time-zone planning.\n\n#### Weighted Shortest Job First (WSJF)\nProduct Management prioritizes features using WSJF:\n$$WSJF = \\frac{Cost\\ of\\ Delay}{Job\\ Size}$$\nwhere Cost of Delay = User-Business Value + Time Criticality + Risk Reduction/Opportunity Enablement.\nThe RTE facilitates WSJF sessions to ensure objective prioritization.\n",
+      "objectives": [
+        {
+          "id": "7_1",
+          "text": "List the three dimensions of PI readiness.",
+          "completed": false
+        },
+        {
+          "id": "7_2",
+          "text": "Calculate WSJF for three sample features to determine their priority.",
+          "completed": false
+        },
+        {
+          "id": "7_3",
+          "text": "Construct a checklist for virtual PI Planning tool setup.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Given two features: Feature A (Cost of Delay = 20, Job Size = 2) and Feature B (Cost of Delay = 30, Job Size = 10). According to WSJF, which should be done first?",
+          "options": [
+            "Feature B, because its Cost of Delay is higher (30 > 20).",
+            "Feature A, because its WSJF score is higher (10 > 3).",
+            "Neither, they must be developed in parallel.",
+            "Feature B, because its Job Size is larger."
+          ],
+          "answerIndex": 1,
+          "explanation": "WSJF for Feature A is 20 / 2 = 10. WSJF for Feature B is 30 / 10 = 3. Feature A has a higher WSJF score and should be scheduled first because it delivers higher relative value per unit of time/effort."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "PI Planning Day 1 Facilitation",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "60 mins",
+      "difficulty": "Advanced",
+      "examWeight": "28%",
+      "description": "Detailed walkthrough of Day 1 Agenda: presentations, team breakout sessions, and draft plan review.",
+      "lessonContent": "\n### Day 1 Agenda of PI Planning\nThe RTE acts as the master of ceremonies, keeping the agenda on time.\n\n#### Standard Agenda Breakdown (Day 1)\n1. **Business Context (8:00 AM)**: Business Owners present the state of the portfolio.\n2. **Product Vision (9:00 AM)**: Product Management presents the top Features.\n3. **Architecture Vision (10:30 AM)**: System Architect outlines infrastructure changes.\n4. **Planning Context & Lunch (11:30 AM)**: RTE explains the planning process and rules.\n5. **Team Breakouts 1 (1:00 PM)**: Teams estimate capacity, draft plans, identify risks, and map dependencies on the Program Board.\n6. **Draft Plan Review (4:00 PM)**: Teams present objectives, capacity, draft plans, and major risks.\n7. **Management Review & Problem-Solving (5:00 PM)**: Leadership addresses scope adjustments, bottlenecks, and planning adjustments.\n\n#### Role of RTE in Team Breakouts\nDuring breakouts, the RTE circulates, checks for team gridlocks, assists with dependency resolution, and helps Scrum Masters keep progress visible on the Program Board.\n",
+      "objectives": [
+        {
+          "id": "8_1",
+          "text": "Memorize the standard SAFe agenda for PI Planning Day 1.",
+          "completed": false
+        },
+        {
+          "id": "8_2",
+          "text": "Describe what occurs during the Management Review and Problem-Solving meeting.",
+          "completed": false
+        },
+        {
+          "id": "8_3",
+          "text": "Identify common pitfalls teams face during their first breakout session.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the main objective of the Management Review and Problem-Solving meeting at the end of Day 1?",
+          "options": [
+            "To micromanage team tasks and assign bugs to engineers.",
+            "To allow managers to rewrite all team user stories.",
+            "To address planning constraints, resolve cross-team dependencies, and adjust scope based on Draft Plan challenges.",
+            "To fire underperforming team members."
+          ],
+          "answerIndex": 2,
+          "explanation": "The Management Review gathers leadership to solve cross-cutting issues, adjust scope/resources, and clear path blockers identified during the Day 1 draft presentations."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "PI Planning Day 2 Facilitation",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "60 mins",
+      "difficulty": "Advanced",
+      "examWeight": "28%",
+      "description": "Day 2 Planning adjustments, final plan reviews, ROAMing risks, and the confidence vote.",
+      "lessonContent": "\n### Day 2 Agenda of PI Planning\nDay 2 focuses on finalizing plans, resolving risks, and securing commitment from the ART.\n\n#### Standard Agenda Breakdown (Day 2)\n1. **Planning Adjustments (8:00 AM)**: Leadership presents changes from the Management Review.\n2. **Team Breakouts 2 (9:00 AM)**: Teams adjust plans, finalize PI objectives, and load details.\n3. **Final Plan Review (11:00 AM)**: Teams present their final plans, objectives, and risks.\n4. **Program Risk ROAMing (12:30 PM)**: All program-level risks are addressed.\n5. **Confidence Vote (1:15 PM)**: The entire train votes on their level of confidence in the plan.\n6. **Plan Rework (if needed)**: Done if confidence is too low.\n7. **Planning Retro & Moving Forward (2:00 PM)**: Review what went well and set next steps.\n\n#### The Confidence Vote\nTeams vote using a Fist of Five:\n- **1-2**: Critical concerns that must be resolved. Rework the plan.\n- **3+**: Confident and committed.\nAn RTE must address anyone showing a 1 or 2 immediately to capture their concern before proceeding.\n",
+      "objectives": [
+        {
+          "id": "9_1",
+          "text": "Detail the Fist-of-Five voting process and the RTE's response to low votes.",
+          "completed": false
+        },
+        {
+          "id": "9_2",
+          "text": "Describe how to facilitate the planning retro at the end of Day 2.",
+          "completed": false
+        },
+        {
+          "id": "9_3",
+          "text": "Outline the criteria for starting a plan rework cycle.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "During the Confidence Vote, three team members raise 2 fingers. What should the RTE do?",
+          "options": [
+            "Ignore them because the majority voted 4 or 5.",
+            "Tell them to vote higher so the meeting can end on time.",
+            "Pause and ask them to share their critical concerns, so the train can address them and modify the plan if necessary.",
+            "Replace them on the planning team."
+          ],
+          "answerIndex": 2,
+          "explanation": "A vote of 1 or 2 means the person does not believe the plan is achievable. The RTE must allow them to voice their concerns so the risk can be addressed or the plan reworked."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Drafting & Finalizing PI Objectives",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "50 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "28%",
+      "description": "How to write SMART PI objectives, differentiate between committed and uncommitted objectives, and assign business value.",
+      "lessonContent": "\n### What are PI Objectives?\nPI Objectives are a summarized, business-friendly set of goals that teams commit to achieving in the upcoming Program Increment.\n\n#### Committed vs. Uncommitted (Stretch) Objectives\n- **Committed Objectives**: Core goals the team is confident they can deliver based on capacity.\n- **Uncommitted Objectives**: High-risk, highly dependent, or uncertain goals. They:\n  - Do NOT count towards the team's commitment.\n  - Help maintain realistic capacity planning.\n  - Are worked on if capacity becomes available.\n  - Do NOT count against the team's predictability measure if missed, but count as extra credit if delivered.\n\n#### Assigning Business Value (BV)\nBusiness Owners review each team's objectives and assign a value from **1 to 10** (10 being highest value). This aligns the team's focus to business needs and helps compute the **Program Predictability Measure**.\n",
+      "objectives": [
+        {
+          "id": "10_1",
+          "text": "Write three sample SMART PI objectives.",
+          "completed": false
+        },
+        {
+          "id": "10_2",
+          "text": "Explain the role of uncommitted objectives in capacity planning.",
+          "completed": false
+        },
+        {
+          "id": "10_3",
+          "text": "Calculate a team's actual predictability percentage based on achieved BV.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Why does SAFe use uncommitted objectives during PI Planning?",
+          "options": [
+            "To allow developers to slack off.",
+            "To hide underperformance from senior managers.",
+            "To improve predictability by isolating high-uncertainty items without inflating capacity assumptions.",
+            "To prioritize bugs over features."
+          ],
+          "answerIndex": 2,
+          "explanation": "Uncommitted objectives represent work that has high uncertainty or dependency. By placing them in this category, teams can plan realistically without risking their official commitment predictability metric."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Managing Risks with ROAMing",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Learn how to categorize and resolve program-level planning risks using the ROAM technique.",
+      "lessonContent": "\n### The ROAM Technique for Risk Management\nDuring PI Planning, teams identify risks. The RTE facilitates the ROAM session to classify and address them.\n\n#### The 4 Quadrants of ROAM:\n- **R - Resolved**: The risk is no longer a problem.\n- **O - Owned**: Someone takes ownership of the risk to investigate or mitigate, but it is not yet solved.\n- **A - Accepted**: The risk is outside the ART's control. It is accepted as a fact of life.\n- **M - Mitigated**: A plan is put in place to reduce the probability or impact of the risk.\n",
+      "objectives": [
+        {
+          "id": "11_1",
+          "text": "Define the acronym ROAM.",
+          "completed": false
+        },
+        {
+          "id": "11_2",
+          "text": "Facilitate a mock ROAMing session for a team risk list.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [
+        {
+          "title": "Facilitating an Effective Remote PI Planning Session",
+          "url": "https://www.scaledagile.com/blog/remote-pi-planning-best-practices/",
+          "summary": "PI planning is the heartbeat of the Agile Release Train. Doing it remotely requires careful tool selection, breakout preparation, and active RTE guidance.",
+          "source": "Agile Insights Library (Scraped)",
+          "date": "7/13/2026"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A team notes that a core system might crash during load testing, and they have scheduled extra server capacity to handle spikes. How is this risk categorized?",
+          "options": [
+            "Resolved",
+            "Owned",
+            "Accepted",
+            "Mitigated"
+          ],
+          "answerIndex": 3,
+          "explanation": "Since they took action (scheduling extra capacity) to reduce the risk's impact, it is Mitigated."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "ART Execution Cadence & Iterations",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Understand the flow of iterations, synchronization points, and how to execute on cadence.",
+      "lessonContent": "\n### Execution on Cadence\nCadence provides a regular, predictable rhythm for the Agile Release Train.\n\n#### The Rhythms of the ART:\n- **Iteration Planning**: Teams plan their individual sprint.\n- **Backlog Refinement**: Continuous preparation of backlog items.\n- **System Demo**: Inspecting working software at the end of each iteration.\n- **IP (Iteration Planning & Innovation) Iteration**: A dedicated buffer sprint for innovation, training, and final PI prep.\n",
+      "objectives": [
+        {
+          "id": "12_1",
+          "text": "Identify all standard iterations within a typical 10-week PI.",
+          "completed": false
+        },
+        {
+          "id": "12_2",
+          "text": "Explain the purpose of the Innovation and Planning (IP) iteration.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Which of the following is NOT a recommended use of the IP Iteration?",
+          "options": [
+            "Training and professional development",
+            "Buffer capacity for shipping missed commitment scope",
+            "Cross-training and innovation spikes",
+            "System maintenance and tool upgrades"
+          ],
+          "answerIndex": 1,
+          "explanation": "The IP iteration is a buffer for planning and learning. Using it systematically to finish delayed stories (Scope creep) destroys predictability and prevents innovation."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Scrum of Scrums (SoS) & PO Sync",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Master facilitation of Scrum of Scrums and Product Owner Sync meetings to maintain ART alignment.",
+      "lessonContent": "\n### Maintaining Alignment: SoS and PO Sync\nThe RTE facilitates these sync events to coordinate progress, manage dependencies, and resolve blockers.\n\n#### Scrum of Scrums (SoS)\n- **Who**: RTE and Scrum Masters.\n- **Frequency**: 1-2 times per week.\n- **Focus**: Delivery progress, blockers, and cross-team dependencies.\n\n#### PO Sync\n- **Who**: RTE, Product Management, and Product Owners.\n- **Frequency**: 1-2 times per week.\n- **Focus**: Scope tracking, trade-offs, roadmap adjustments, and WSJF review.\n\n*Combined ART Sync*: Sometimes the SoS and PO Sync are merged into a single alignment meeting.\n",
+      "objectives": [
+        {
+          "id": "13_1",
+          "text": "Establish a standard template agenda for a Scrum of Scrums.",
+          "completed": false
+        },
+        {
+          "id": "13_2",
+          "text": "List three common issues discussed in a PO Sync.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Who primarily participates in the Scrum of Scrums meeting?",
+          "options": [
+            "The developers and testers",
+            "The RTE and Scrum Masters",
+            "The Business Owners and CEO",
+            "Product Management and UX Designers"
+          ],
+          "answerIndex": 1,
+          "explanation": "The SoS is facilitated by the RTE and attended by Scrum Masters to align on execution, dependencies, and blockers."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "System Demos & Solution Demos",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Facilitate objective evaluations of working systems across the entire train.",
+      "lessonContent": "\n### The System Demo\nThe System Demo occurs at the end of every iteration. It is the primary mechanism for objective feedback and validating progress on the ART.\n\n#### Key Principles:\n- **Working Software**: PowerPoint slides are heavily discouraged; actual integrated code is demonstrated.\n- **End-to-End**: Features are demoed in a staging environment resembling production.\n- **Stakeholder Feedback**: Business Owners, PM, and customers evaluate the system against expectations.\n",
+      "objectives": [
+        {
+          "id": "14_1",
+          "text": "Describe the logistics of setting up an integrated staging environment for System Demos.",
+          "completed": false
+        },
+        {
+          "id": "14_2",
+          "text": "Differentiate a Team Demo from a System Demo.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [
+        {
+          "title": "Applying Systems Thinking to Resolve Cross-Team Bottlenecks",
+          "url": "https://www.scaledagile.com/blog/systems-thinking-rte/",
+          "summary": "Systems thinking is a core SAFe principle. Learn how the RTE optimizes the entire train rather than single teams.",
+          "source": "Agile Insights Library (Scraped)",
+          "date": "7/13/2026"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the primary criteria for progress demonstrated in a SAFe System Demo?",
+          "options": [
+            "Percent of tasks completed on JIRA",
+            "A walkthrough of PowerPoint slides detailing future designs",
+            "An objective evaluation of integrated, working software in a staging environment",
+            "Total hours logged by team members"
+          ],
+          "answerIndex": 2,
+          "explanation": "Progress in SAFe is measured by working software, demonstrated in an integrated environment during the System Demo."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Inspect & Adapt (I&A) Workshop",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Structure and run the Inspect & Adapt event to drive continuous improvement at the program level.",
+      "lessonContent": "\n### Inspect & Adapt (I&A)\nThe I&A is a structured workshop held at the end of every Program Increment.\n\n#### Three Core Parts:\n1. **PI System Demo**: Demo of all features completed during the PI.\n2. **Quantitative Metrics Review**: Presentation of business values achieved, reliability metrics, and defects.\n3. **Retrospective and Problem-Solving Workshop**: Root-cause analysis (using fishbone diagrams or 5 Whys) to generate improvement items for the next PI.\n",
+      "objectives": [
+        {
+          "id": "15_1",
+          "text": "Outline the three segments of the Inspect & Adapt event.",
+          "completed": false
+        },
+        {
+          "id": "15_2",
+          "text": "Explain the calculation of the Program Predictability Measure.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the key output of the Retrospective and Problem-Solving Workshop during the I&A?",
+          "options": [
+            "Performance reviews for individual developers",
+            "Improvement backlog items that can be loaded into the next PI Planning",
+            "A list of people to blame for missed goals",
+            "An updated project charter"
+          ],
+          "answerIndex": 1,
+          "explanation": "The problem-solving workshop aims to identify root causes of systematic issues and generate concrete action items to include in the next PI backlog."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Relentless Improvement & Problem Solving",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Apply root-cause analysis tools to improve value delivery and solve systemic team bottlenecks.",
+      "lessonContent": "\n### Relentless Improvement\nRelentless improvement is a SAFe Core Value. The RTE uses structured problem-solving to address systemic issues.\n\n#### Root Cause Tools:\n- **5 Whys**: Repeatedly asking 'Why' to drill down to the fundamental cause of a defect.\n- **Ishikawa (Fishbone) Diagram**: Brainstorming potential causes across categories like People, Process, Technology, and Policy.\n- **Pareto Principle**: Focusing on the 20% of causes that create 80% of the friction.\n",
+      "objectives": [
+        {
+          "id": "16_1",
+          "text": "Facilitate a Fishbone diagram session for a defect leak issue.",
+          "completed": false
+        },
+        {
+          "id": "16_2",
+          "text": "Describe how to create an improvement item backlog.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "Which tool is best suited for identifying the root cause of a specific, narrow process failure by digging deeper into sequential causes?",
+          "options": [
+            "WSJF",
+            "Fist of Five",
+            "5 Whys",
+            "Cumulative Flow Diagram"
+          ],
+          "answerIndex": 2,
+          "explanation": "The 5 Whys technique involves repeatedly asking why to uncover sequential causal relationships and arrive at the root cause."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Value Stream Mapping & Flow Optimization",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Identify waste, measure lead time vs. processing time, and optimize the value stream.",
+      "lessonContent": "\n### Value Stream Mapping (VSM)\nVSM is a lean tool used to visualize the flow of value from concept to cash.\n\n#### Key Metrics:\n- **Lead Time**: Total time from request to delivery.\n- **Processing Time (PT)**: Time spent actively working on the task.\n- **Delay (Queue) Time**: Time spent waiting in queues.\n- **Flow Efficiency**: (Total Processing Time / Lead Time) * 100%. Usually, flow efficiency is surprisingly low (under 10%).\n",
+      "objectives": [
+        {
+          "id": "17_1",
+          "text": "Calculate the Flow Efficiency of a release pipeline.",
+          "completed": false
+        },
+        {
+          "id": "17_2",
+          "text": "Identify steps to map a Value Stream with stakeholders.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [
+        {
+          "title": "Understanding Flow Efficiency in SAFe Value Streams",
+          "url": "https://www.agilealliance.org/flow-efficiency-safe-vsm/",
+          "summary": "How to run a Value Stream Mapping workshop to identify waste and speed up delivery cycles on the Agile Release Train.",
+          "source": "Agile Insights Library (Scraped)",
+          "date": "7/13/2026"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "If a feature takes 10 days to be released, but engineers only spent 1 day actively coding and testing it (the rest was waiting in queue), what is the Flow Efficiency?",
+          "options": [
+            "100%",
+            "90%",
+            "10%",
+            "1%"
+          ],
+          "answerIndex": 2,
+          "explanation": "Flow efficiency is Processing Time / Lead Time. Here, 1 day / 10 days = 10%."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Continuous Delivery Pipeline & DevOps",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "How the RTE helps build continuous exploration, continuous integration, and continuous deployment capabilities.",
+      "lessonContent": "\n### The Continuous Delivery Pipeline (CDP)\nThe CDP represents the workflows, activities, and technologies needed to guide a new feature from concept to release.\n\n#### Three Elements of CDP:\n1. **Continuous Exploration (CE)**: Discovering user needs and writing features.\n2. **Continuous Integration (CI)**: Coding, building, testing, and staging the software.\n3. **Continuous Deployment (CD)**: Moving changes from staging to production, dark launched.\n",
+      "objectives": [
+        {
+          "id": "18_1",
+          "text": "Detail the role of the RTE in encouraging automated testing.",
+          "completed": false
+        },
+        {
+          "id": "18_2",
+          "text": "Explain the CALMR approach to DevOps.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What does CALMR stand for in SAFe DevOps?",
+          "options": [
+            "Code, Align, Lead, Monitor, Release",
+            "Culture, Automation, Lean flow, Measurement, Recovery",
+            "Continuous, Agile, Lean, Modern, Robust",
+            "Create, Analyze, Leverage, Moderate, Review"
+          ],
+          "answerIndex": 1,
+          "explanation": "The CALMR approach stands for Culture, Automation, Lean flow, Measurement, and Recovery."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Release on Demand (RoD)",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Decouple development cadence from release activities to deploy value when the business needs it.",
+      "lessonContent": "\n### Release on Demand\nCadence does not mean locking in release schedules. SAFe advocates **Develop on Cadence, Release on Demand**.\n\n#### Key Strategies:\n- **Dark Launching**: Deploying features to production without making them visible to users.\n- **Feature Toggles**: Conditional statements in code that activate features dynamically.\n- **Canary Releases**: Deploying changes to a tiny fraction of users first to verify stability.\n",
+      "objectives": [
+        {
+          "id": "19_1",
+          "text": "Define feature toggling and its benefits for risk mitigation.",
+          "completed": false
+        },
+        {
+          "id": "19_2",
+          "text": "Coordinate a joint release plan across multiple systems.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the primary benefit of decoupling deployment from release (Release on Demand)?",
+          "options": [
+            "It allows developers to skip QA testing.",
+            "It enables business owners to choose exactly when to launch features to customers, independent of sprint cycles.",
+            "It eliminates the need for any DevOps automation.",
+            "It forces developers to work overtime on weekends."
+          ],
+          "answerIndex": 1,
+          "explanation": "Decoupling lets engineering deploy code continuously to production behind toggles, allowing product managers to release them to users whenever market conditions are right."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Coaching Teams & Scrum Masters",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "How the RTE coaches Scrum Masters to facilitate team-level agility and self-organization.",
+      "lessonContent": "\n### Coaching the Scrum Masters\nThe RTE acts as a mentor and coach to the Scrum Masters on the train.\n\n#### Coaching Areas:\n- **Scrum/Kanban practices**: Ensuring teams write clean stories and manage WIP.\n- **Facilitation**: Improving iteration planning, retrospectives, and daily standups.\n- **Impediment escalation**: Coaching SMs on when to solve problems locally versus when to escalate to the RTE.\n",
+      "objectives": [
+        {
+          "id": "20_1",
+          "text": "Create a coaching plan for a new Scrum Master.",
+          "completed": false
+        },
+        {
+          "id": "20_2",
+          "text": "Identify techniques to resolve team conflicts.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [
+        {
+          "title": "Coaching Scrum Masters to Master the Art of Flow",
+          "url": "https://www.scrum.org/resources/blog/coaching-sm-flow",
+          "summary": "The RTE is a coach to Scrum Masters. Help them move beyond basic scrum ceremonies to focus on WIP limits, cumulative flow, and blockages.",
+          "source": "Agile Insights Library (Scraped)",
+          "date": "7/13/2026"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "When a Scrum Master escalates every minor team bug to the RTE, how should the RTE respond?",
+          "options": [
+            "Fix the bugs immediately.",
+            "Ignore the Scrum Master's emails.",
+            "Coach the Scrum Master on self-organization, setting boundaries on local problem-solving before escalating.",
+            "Request to replace the Scrum Master."
+          ],
+          "answerIndex": 2,
+          "explanation": "A coach helps others develop their own problem-solving skills. The RTE should coach the SM to empower the team to resolve local problems themselves."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Coaching POs & Product Management",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 21 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Coaching POs & Product Management\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Coaching POs & Product Management**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "21_1",
+          "text": "Understand the core principles of Coaching POs & Product Management.",
+          "completed": false
+        },
+        {
+          "id": "21_2",
+          "text": "Apply Coaching POs & Product Management scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 21 regarding Coaching POs & Product Management?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 21 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Fostering Innovation and IP Buffer",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 22 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Fostering Innovation and IP Buffer\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Fostering Innovation and IP Buffer**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "22_1",
+          "text": "Understand the core principles of Fostering Innovation and IP Buffer.",
+          "completed": false
+        },
+        {
+          "id": "22_2",
+          "text": "Apply Fostering Innovation and IP Buffer scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 22 regarding Fostering Innovation and IP Buffer?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 22 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Lean Portfolio Management (LPM) Alignment",
+      "domain": "Applying SAFe Principles",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 23 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Lean Portfolio Management (LPM) Alignment\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Lean Portfolio Management (LPM) Alignment**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "23_1",
+          "text": "Understand the core principles of Lean Portfolio Management (LPM) Alignment.",
+          "completed": false
+        },
+        {
+          "id": "23_2",
+          "text": "Apply Lean Portfolio Management (LPM) Alignment scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 23 regarding Lean Portfolio Management (LPM) Alignment?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 23 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Enterprise Agility & Systems thinking",
+      "domain": "Applying SAFe Principles",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 24 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Enterprise Agility & Systems thinking\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Enterprise Agility & Systems thinking**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "24_1",
+          "text": "Understand the core principles of Enterprise Agility & Systems thinking.",
+          "completed": false
+        },
+        {
+          "id": "24_2",
+          "text": "Apply Enterprise Agility & Systems thinking scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 24 regarding Enterprise Agility & Systems thinking?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 24 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Resolving ART Impediments & Blockers",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 25 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Resolving ART Impediments & Blockers\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Resolving ART Impediments & Blockers**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "25_1",
+          "text": "Understand the core principles of Resolving ART Impediments & Blockers.",
+          "completed": false
+        },
+        {
+          "id": "25_2",
+          "text": "Apply Resolving ART Impediments & Blockers scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 25 regarding Resolving ART Impediments & Blockers?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 25 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Metrics & Performance Measurement on the ART",
+      "domain": "Executing the Program Increment (PI)",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 26 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Metrics & Performance Measurement on the ART\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Metrics & Performance Measurement on the ART**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "26_1",
+          "text": "Understand the core principles of Metrics & Performance Measurement on the ART.",
+          "completed": false
+        },
+        {
+          "id": "26_2",
+          "text": "Apply Metrics & Performance Measurement on the ART scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 26 regarding Metrics & Performance Measurement on the ART?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 26 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Large Solution Coordination",
+      "domain": "Serving the Agile Release Train",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 27 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Large Solution Coordination\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Large Solution Coordination**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "27_1",
+          "text": "Understand the core principles of Large Solution Coordination.",
+          "completed": false
+        },
+        {
+          "id": "27_2",
+          "text": "Apply Large Solution Coordination scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 27 regarding Large Solution Coordination?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 27 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Preparing for the SAFe RTE Exam",
+      "domain": "Exploring the RTE Role",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 28 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Preparing for the SAFe RTE Exam\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Preparing for the SAFe RTE Exam**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "28_1",
+          "text": "Understand the core principles of Preparing for the SAFe RTE Exam.",
+          "completed": false
+        },
+        {
+          "id": "28_2",
+          "text": "Apply Preparing for the SAFe RTE Exam scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 28 regarding Preparing for the SAFe RTE Exam?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 28 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Scenario-based RTE Case Studies",
+      "domain": "Exploring the RTE Role",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 29 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Scenario-based RTE Case Studies\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Scenario-based RTE Case Studies**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "29_1",
+          "text": "Understand the core principles of Scenario-based RTE Case Studies.",
+          "completed": false
+        },
+        {
+          "id": "29_2",
+          "text": "Apply Scenario-based RTE Case Studies scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 29 regarding Scenario-based RTE Case Studies?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 29 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Final Practice & Certification Path",
+      "domain": "Exploring the RTE Role",
+      "duration": "45 mins",
+      "difficulty": "Intermediate",
+      "examWeight": "15%",
+      "description": "Focus on advanced skills and methodologies for day 30 of the Release Train Engineer path.",
+      "lessonContent": "\n### Study Topic: Final Practice & Certification Path\nThis lesson covers detailed considerations for the SAFe Release Train Engineer role regarding **Final Practice & Certification Path**.\n\n#### Key Objectives:\n- Master advanced facilitation dynamics.\n- Focus on performance tracking and continuous flow.\n- Understand the integration of Lean principles with corporate governance.\n",
+      "objectives": [
+        {
+          "id": "30_1",
+          "text": "Understand the core principles of Final Practice & Certification Path.",
+          "completed": false
+        },
+        {
+          "id": "30_2",
+          "text": "Apply Final Practice & Certification Path scenarios in practice questions.",
+          "completed": false
+        }
+      ],
+      "scrapedMaterials": [],
+      "quiz": [
+        {
+          "question": "What is the core focus of Day 30 regarding Final Practice & Certification Path?",
+          "options": [
+            "Ignoring SAFe principles in favor of waterfall processes",
+            "Applying structured Lean-Agile patterns to build alignment",
+            "Reducing communication between teams",
+            "Letting the project timeline slip"
+          ],
+          "answerIndex": 1,
+          "explanation": "Day 30 focus is on applying agile/SAFe patterns to build alignment and clear blockers."
+        }
+      ]
+    }
+  ],
+  "scraperConfig": {
+    "targetFeeds": [
+      {
+        "name": "Scaled Agile Blog",
+        "url": "https://www.scaledagile.com/blog/feed/",
+        "active": true
+      },
+      {
+        "name": "Agile Alliance Blog",
+        "url": "https://www.agilealliance.org/feed/",
+        "active": true
+      },
+      {
+        "name": "Scrum.org Blog",
+        "url": "https://www.scrum.org/resources/blog/feed",
+        "active": true
+      }
+    ],
+    "keywords": [
+      "Release Train",
+      "RTE",
+      "PI Planning",
+      "SAFe",
+      "Agile Release Train",
+      "Agile Coach",
+      "Scrum Master"
+    ],
+    "cronSchedule": "*/30 * * * *"
+  },
+  "scrapeLogs": [
+    {
+      "timestamp": "2026-07-13T07:50:01.275Z",
+      "status": "Success",
+      "articlesFound": 4,
+      "articlesAdded": 4,
+      "message": "Successfully scraped and mapped 4 articles to study schedule."
+    },
+    {
+      "timestamp": "2026-07-13T07:42:33.503Z",
+      "status": "Success",
+      "articlesFound": 0,
+      "articlesAdded": 0,
+      "message": "Database seeded. Scraper initialized in idle state."
+    }
+  ]
+}
