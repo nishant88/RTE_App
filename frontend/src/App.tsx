@@ -173,6 +173,84 @@ export default function App() {
     fetchData(true);
   }, []);
 
+  // Search Results Compilation (null-safe)
+  const getSearchResults = () => {
+    if (!data || !searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase();
+    const matchedDays: Array<{ type: 'day'; id: number; title: string; subtitle: string; matchText: string }> = [];
+    
+    data.days.forEach(day => {
+      const inTitle = day.title.toLowerCase().includes(query);
+      const inDesc = day.description.toLowerCase().includes(query);
+      const inContent = day.lessonContent.toLowerCase().includes(query);
+      
+      if (inTitle || inDesc || inContent) {
+        matchedDays.push({
+          type: 'day',
+          id: day.id,
+          title: `Day ${day.id}: ${day.title}`,
+          subtitle: day.domain,
+          matchText: inTitle ? "Matched in Title" : inDesc ? "Matched in Description" : "Matched in Lesson Content"
+        });
+      }
+
+      day.scrapedMaterials.forEach(mat => {
+        if (mat.title.toLowerCase().includes(query) || mat.summary.toLowerCase().includes(query)) {
+          matchedDays.push({
+            type: 'day',
+            id: day.id,
+            title: `[Supplementary Resource] ${mat.title}`,
+            subtitle: `Belongs to Day ${day.id}: ${day.title} (${mat.source})`,
+            matchText: "Matched in Scraped Supplementary Article"
+          });
+        }
+      });
+    });
+
+    return matchedDays;
+  };
+
+  // Derived statistics (null-safe)
+  const totalObjectives = data?.days.reduce((acc, d) => acc + d.objectives.length, 0) || 0;
+  const completedObjectives = data?.days.reduce((acc, d) => acc + d.objectives.filter(o => o.completed).length, 0) || 0;
+  const completionPercentage = Math.round((completedObjectives / totalObjectives) * 100) || 0;
+  const completedDaysCount = data?.days.filter(d => d.objectives.every(o => o.completed)).length || 0;
+
+  const domainsList = [
+    "All",
+    "Serving the Agile Release Train",
+    "Executing the Program Increment (PI)",
+    "Applying SAFe Principles",
+    "Exploring the RTE Role"
+  ];
+
+  // Filtering days list (memoized, null-safe)
+  const filteredDays = React.useMemo(() => {
+    if (!data) return [];
+    return data.days.filter(day => {
+      if (domainFilter === 'All') return true;
+      return day.domain === domainFilter;
+    });
+  }, [data, domainFilter]);
+
+  // Memoized current study day selection (null-safe)
+  const selectedDay = React.useMemo(() => {
+    if (!data) return null;
+    return data.days.find(d => d.id === selectedDayId) || data.days[0];
+  }, [data, selectedDayId]);
+
+  // Search library query lookup (memoized, null-safe)
+  const searchResults = React.useMemo(() => {
+    return getSearchResults();
+  }, [searchQuery, data]);
+
+  // Parse lesson markdown to HTML (memoized, null-safe)
+  const memoizedLessonHtml = React.useMemo(() => {
+    if (!selectedDay) return '';
+    return renderMarkdownToHtml(selectedDay.lessonContent);
+  }, [selectedDay]);
+
+  // Early returns (MUST BE PLACED AFTER ALL HOOK DECLARATIONS to satisfy Rules of Hooks)
   if (loading) {
     return (
       <div className="loading-screen" style={{
@@ -186,7 +264,7 @@ export default function App() {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || !selectedDay) {
     return (
       <div className="error-screen" style={{
         display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw',
@@ -203,34 +281,6 @@ export default function App() {
       </div>
     );
   }
-
-  // Derived statistics
-  const totalObjectives = data.days.reduce((acc, d) => acc + d.objectives.length, 0);
-  const completedObjectives = data.days.reduce((acc, d) => acc + d.objectives.filter(o => o.completed).length, 0);
-  const completionPercentage = Math.round((completedObjectives / totalObjectives) * 100) || 0;
-  
-  const completedDaysCount = data.days.filter(d => d.objectives.every(o => o.completed)).length;
-
-  const domainsList = [
-    "All",
-    "Serving the Agile Release Train",
-    "Executing the Program Increment (PI)",
-    "Applying SAFe Principles",
-    "Exploring the RTE Role"
-  ];
-
-  // Filtering days list (memoized to avoid redundant calculations)
-  const filteredDays = React.useMemo(() => {
-    return data.days.filter(day => {
-      if (domainFilter === 'All') return true;
-      return day.domain === domainFilter;
-    });
-  }, [data.days, domainFilter]);
-
-  // Memoized current study day selection
-  const selectedDay = React.useMemo(() => {
-    return data.days.find(d => d.id === selectedDayId) || data.days[0];
-  }, [data.days, selectedDayId]);
 
   // Toggling objective checklist item
   const handleToggleObjective = async (dayId: number, objId: string, currentCompleted: boolean) => {
@@ -380,43 +430,7 @@ export default function App() {
     }
   };
 
-  // Search Results Compilation
-  const getSearchResults = () => {
-    if (!searchQuery.trim()) return [];
-    const query = searchQuery.toLowerCase();
-    
-    const matchedDays: Array<{ type: 'day'; id: number; title: string; subtitle: string; matchText: string }> = [];
-    
-    data.days.forEach(day => {
-      const inTitle = day.title.toLowerCase().includes(query);
-      const inDesc = day.description.toLowerCase().includes(query);
-      const inContent = day.lessonContent.toLowerCase().includes(query);
-      
-      if (inTitle || inDesc || inContent) {
-        matchedDays.push({
-          type: 'day',
-          id: day.id,
-          title: `Day ${day.id}: ${day.title}`,
-          subtitle: day.domain,
-          matchText: inTitle ? "Matched in Title" : inDesc ? "Matched in Description" : "Matched in Lesson Content"
-        });
-      }
 
-      day.scrapedMaterials.forEach(mat => {
-        if (mat.title.toLowerCase().includes(query) || mat.summary.toLowerCase().includes(query)) {
-          matchedDays.push({
-            type: 'day',
-            id: day.id,
-            title: `[Supplementary Resource] ${mat.title}`,
-            subtitle: `Belongs to Day ${day.id}: ${day.title} (${mat.source})`,
-            matchText: "Matched in Scraped Supplementary Article"
-          });
-        }
-      });
-    });
-
-    return matchedDays;
-  };
 
   // Quiz Handling
   const handleSelectQuizOption = (dayId: number, optionIdx: number) => {
@@ -440,15 +454,7 @@ export default function App() {
     }));
   };
 
-  // Search library query lookup (memoized)
-  const searchResults = React.useMemo(() => {
-    return getSearchResults();
-  }, [searchQuery, data.days]);
 
-  // Parse lesson markdown to HTML (memoized to avoid parsing on simple state triggers)
-  const memoizedLessonHtml = React.useMemo(() => {
-    return renderMarkdownToHtml(selectedDay.lessonContent);
-  }, [selectedDay.id, selectedDay.lessonContent]);
 
   return (
     <div className="app-container">
