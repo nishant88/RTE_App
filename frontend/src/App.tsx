@@ -421,7 +421,7 @@ export default function App() {
     try {
       const response = await fetch(`${API_BASE}/lessons/reset`, { method: 'POST' });
       if (response.ok) {
-        fetchData();
+        fetchData(true); // Automatically select first unfinished day (Day 1)
         setQuizState({});
         alert("Study tracker has been initialized.");
       }
@@ -510,10 +510,30 @@ export default function App() {
                 transition: 'width 0.5s ease-out'
               }} />
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', fontSize: '11px', color: 'var(--text-dark)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', fontSize: '11px', color: 'var(--text-dark)', marginBottom: '12px' }}>
               <span>{completedObjectives} / {totalObjectives} Objectives</span>
               <span>{completedDaysCount} / 30 Days Mastered</span>
             </div>
+            
+            <button 
+              onClick={handleResetProgress}
+              className="glow-btn-secondary" 
+              style={{ 
+                width: '100%',
+                padding: '6px 12px', 
+                fontSize: '11px', 
+                border: '1.5px solid var(--error)', 
+                color: 'var(--error)', 
+                background: 'var(--bg-card)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px'
+              }}
+              title="Reset study checklists and scraper materials back to seed state."
+            >
+              <RotateCcw size={11} /> Reset Study Progress
+            </button>
           </div>
         </div>
 
@@ -682,7 +702,16 @@ export default function App() {
             <button 
               onClick={handleResetProgress}
               className="glow-btn-secondary" 
-              style={{ padding: '6px 12px', fontSize: '12px', border: '1px solid rgba(248, 113, 113, 0.25)', color: '#f87171' }}
+              style={{ 
+                padding: '6px 12px', 
+                fontSize: '12px', 
+                border: '1.5px solid var(--error)', 
+                color: 'var(--error)',
+                background: 'var(--bg-card)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
               title="Reset study checklists and scraper materials back to seed state."
             >
               <RotateCcw size={12} /> Reset Database
