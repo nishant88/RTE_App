@@ -1217,6 +1217,13 @@
   },
   "scrapeLogs": [
     {
+      "timestamp": "2026-07-14T16:30:04.096Z",
+      "status": "No New Content",
+      "articlesFound": 0,
+      "articlesAdded": 0,
+      "message": "Scraper ran successfully, but no new unique articles were found."
+    },
+    {
       "timestamp": "2026-07-14T16:00:04.986Z",
       "status": "No New Content",
       "articlesFound": 0,
@@ -1558,13 +1565,6 @@
       "articlesFound": 3,
       "articlesAdded": 3,
       "message": "Successfully scraped and mapped 3 articles to study schedule."
-    },
-    {
-      "timestamp": "2026-07-13T08:30:05.578Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
     }
   ]
 }
