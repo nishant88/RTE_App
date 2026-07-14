@@ -1217,6 +1217,13 @@
   },
   "scrapeLogs": [
     {
+      "timestamp": "2026-07-14T19:00:00.828Z",
+      "status": "No New Content",
+      "articlesFound": 0,
+      "articlesAdded": 0,
+      "message": "Scraper ran successfully, but no new unique articles were found."
+    },
+    {
       "timestamp": "2026-07-14T18:30:04.072Z",
       "status": "No New Content",
       "articlesFound": 0,
@@ -1554,13 +1561,6 @@
     },
     {
       "timestamp": "2026-07-13T11:00:04.316Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-07-13T10:30:05.209Z",
       "status": "No New Content",
       "articlesFound": 0,
       "articlesAdded": 0,
