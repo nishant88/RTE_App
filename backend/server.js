@@ -212,7 +212,14 @@ app.post('/api/scraper-config', (req, res) => {
     return res.status(500).json({ error: "Database unavailable." });
   }
 
-  if (targetFeeds) db.scraperConfig.targetFeeds = targetFeeds;
+  if (targetFeeds) {
+    for (const feed of targetFeeds) {
+      if (!feed.url || (!feed.url.startsWith('http://') && !feed.url.startsWith('https://'))) {
+        return res.status(400).json({ error: `Invalid URL format for "${feed.name}". Must start with http:// or https://.` });
+      }
+    }
+    db.scraperConfig.targetFeeds = targetFeeds;
+  }
   if (keywords) db.scraperConfig.keywords = keywords;
   
   let scheduleChanged = false;

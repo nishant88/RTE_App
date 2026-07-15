@@ -117,8 +117,30 @@ export default function App() {
   const [data, setData] = useState<DbData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedDayId, setSelectedDayId] = useState<number>(1);
-  const [activeTab, setActiveTab] = useState<'study' | 'scraper' | 'search'>('study');
+  
+  const [selectedDayId, setSelectedDayId] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('rte_selected_day_id');
+      if (saved) {
+        const parsed = parseInt(saved, 10);
+        if (!isNaN(parsed) && parsed >= 1 && parsed <= 30) {
+          return parsed;
+        }
+      }
+    }
+    return 1;
+  });
+
+  const [activeTab, setActiveTab] = useState<'study' | 'scraper' | 'search'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('rte_active_tab');
+      if (saved && (saved === 'study' || saved === 'scraper' || saved === 'search')) {
+        return saved as any;
+      }
+    }
+    return 'study';
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [domainFilter, setDomainFilter] = useState('All');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -131,14 +153,34 @@ export default function App() {
   const [newFeedName, setNewFeedName] = useState('');
   const [newFeedUrl, setNewFeedUrl] = useState('');
 
-  // Close sidebar on day selection for mobile responsiveness
+  // Close sidebar on day selection for mobile responsiveness & synchronize localStorage
   useEffect(() => {
     setSidebarOpen(false);
+    localStorage.setItem('rte_selected_day_id', selectedDayId.toString());
   }, [selectedDayId]);
 
-  // Quiz interactive state
-  // key: dayId, value: index of option chosen, boolean for submission, boolean for correctness
-  const [quizState, setQuizState] = useState<Record<number, { selectedIndex: number | null; submitted: boolean }>>({});
+  useEffect(() => {
+    localStorage.setItem('rte_active_tab', activeTab);
+  }, [activeTab]);
+
+  // Quiz interactive state (persisted)
+  const [quizState, setQuizState] = useState<Record<number, { selectedIndex: number | null; submitted: boolean }>>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('rte_quiz_state');
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (e) {
+          return {};
+        }
+      }
+    }
+    return {};
+  });
+
+  useEffect(() => {
+    localStorage.setItem('rte_quiz_state', JSON.stringify(quizState));
+  }, [quizState]);
 
   const API_BASE = typeof window !== 'undefined' && window.location.hostname
     ? `http://${window.location.hostname}:3001/api`
