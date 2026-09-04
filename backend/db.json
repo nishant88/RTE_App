@@ -13,28 +13,20 @@
         {
           "id": "1_1",
           "text": "Explain the difference between a traditional Project Manager and a SAFe RTE.",
-          "completed": true
+          "completed": false
         },
         {
           "id": "1_2",
           "text": "Identify the 4 main domains of the SAFe RTE exam syllabus.",
-          "completed": true
+          "completed": false
         },
         {
           "id": "1_3",
           "text": "Understand the concept of servant leadership in the context of scaled agile.",
-          "completed": true
+          "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Is Agile Coach Camp for You?",
-          "url": "https://agilealliance.org/is-agile-coach-camp-for-you/",
-          "summary": " Skip to content Is Agile Coach Camp for You? June 17, 2026 Community, People Ricardo Abella Sarmiento For years, I was fascinated by TED Talks, which I always found creative and energizing. As both an attendee and a member of several organizing teams, I had the opportunity to meet interesting peopl...",
-          "source": "Agile Alliance Blog",
-          "date": "6/18/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "Which of the following best describes the primary relationship between an RTE and the teams on the Agile Release Train?",
@@ -198,15 +190,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "The Underrated Skill of Intentional Observation",
-          "url": "https://agilealliance.org/the-underrated-skill-of-intentional-observation/",
-          "summary": " Skip to content The Underrated Skill of Intentional Observation June 11, 2026 Mindset Ronald Castellon During my Scrum master training, I was taught that my goal was to help the team become Agile. That involved helping remove blockers and obstacles, and coaching the team to become self-managed and ...",
-          "source": "Agile Alliance Blog",
-          "date": "6/11/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "Who are the three primary roles that form the leadership triad of an Agile Release Train?",
@@ -447,15 +431,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Facilitating an Effective Remote PI Planning Session",
-          "url": "https://www.scaledagile.com/blog/remote-pi-planning-best-practices/",
-          "summary": "PI planning is the heartbeat of the Agile Release Train. Doing it remotely requires careful tool selection, breakout preparation, and active RTE guidance.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "7/13/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "A team notes that a core system might crash during load testing, and they have scheduled extra server capacity to handle spikes. How is this risk categorized?",
@@ -563,15 +539,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Applying Systems Thinking to Resolve Cross-Team Bottlenecks",
-          "url": "https://www.scaledagile.com/blog/systems-thinking-rte/",
-          "summary": "Systems thinking is a core SAFe principle. Learn how the RTE optimizes the entire train rather than single teams.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "7/13/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "What is the primary criteria for progress demonstrated in a SAFe System Demo?",
@@ -679,15 +647,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Understanding Flow Efficiency in SAFe Value Streams",
-          "url": "https://www.agilealliance.org/flow-efficiency-safe-vsm/",
-          "summary": "How to run a Value Stream Mapping workshop to identify waste and speed up delivery cycles on the Agile Release Train.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "7/13/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "If a feature takes 10 days to be released, but engineers only spent 1 day actively coding and testing it (the rest was waiting in queue), what is the Flow Efficiency?",
@@ -795,22 +755,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Coaching Scrum Masters to Master the Art of Flow",
-          "url": "https://www.scrum.org/resources/blog/coaching-sm-flow",
-          "summary": "The RTE is a coach to Scrum Masters. Help them move beyond basic scrum ceremonies to focus on WIP limits, cumulative flow, and blockages.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "7/13/2026"
-        },
-        {
-          "title": "Case Study: Strengthening Scrum Master Leadership Through Scenario-Based Discussion",
-          "url": "https://agilealliance.org/case-study-strengthening-scrum-master-leadership-through-scenario-based-discussion/",
-          "summary": " Skip to content Case Study: Strengthening Scrum Master Leadership Through Scenario-Based Discussion March 17, 2026 Mindset, People Joe Foley This Agile case study is drawn from the Agile Experience Report “Inventing and Implementing ‘The Scrum Master Dilemma Game'” by Charlotte Frandsen. Nykredit, ...",
-          "source": "Agile Alliance Blog",
-          "date": "3/18/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "When a Scrum Master escalates every minor team bug to the RTE, how should the RTE respond?",
@@ -1217,354 +1162,11 @@
   },
   "scrapeLogs": [
     {
-      "timestamp": "2026-08-02T08:00:05.654Z",
-      "status": "No New Content",
+      "timestamp": "2026-09-04T07:07:26.019Z",
+      "status": "Reset",
       "articlesFound": 0,
       "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T07:30:05.544Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T07:00:06.010Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T06:30:05.484Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T06:00:05.905Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T05:30:05.340Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T05:00:05.761Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T04:30:05.230Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T04:00:05.672Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T03:30:05.132Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T03:00:05.551Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T02:30:05.971Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T02:00:05.417Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T01:30:05.870Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T01:00:05.284Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T00:30:05.665Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-02T00:00:06.060Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T23:30:05.468Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T23:00:05.841Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T22:30:05.235Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T22:00:05.584Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T21:30:05.964Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T21:00:05.342Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T20:30:05.764Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T20:00:05.187Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T19:30:05.575Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T19:00:05.932Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T18:30:05.309Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T18:00:05.663Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T17:30:06.064Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T17:00:05.485Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T16:30:05.888Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T16:00:04.236Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T15:30:05.620Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T15:00:05.287Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T14:30:04.554Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T14:00:04.800Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T13:30:04.310Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T13:00:04.642Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T12:30:04.827Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T12:00:04.480Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T11:30:04.589Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T11:00:05.381Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T10:30:05.729Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T10:00:04.154Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T09:30:04.291Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T09:00:05.231Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-08-01T02:30:04.351Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-07-31T14:00:01.092Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-07-31T12:30:05.197Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
+      "message": "Study tracker progress and scraped materials reset by user."
     }
   ]
 }
