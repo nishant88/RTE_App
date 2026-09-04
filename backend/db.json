@@ -431,15 +431,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Facilitating an Effective Remote PI Planning Session",
-          "url": "https://www.scaledagile.com/blog/remote-pi-planning-best-practices/",
-          "summary": "PI planning is the heartbeat of the Agile Release Train. Doing it remotely requires careful tool selection, breakout preparation, and active RTE guidance.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "9/4/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "A team notes that a core system might crash during load testing, and they have scheduled extra server capacity to handle spikes. How is this risk categorized?",
@@ -547,15 +539,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Applying Systems Thinking to Resolve Cross-Team Bottlenecks",
-          "url": "https://www.scaledagile.com/blog/systems-thinking-rte/",
-          "summary": "Systems thinking is a core SAFe principle. Learn how the RTE optimizes the entire train rather than single teams.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "9/4/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "What is the primary criteria for progress demonstrated in a SAFe System Demo?",
@@ -663,15 +647,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Understanding Flow Efficiency in SAFe Value Streams",
-          "url": "https://www.agilealliance.org/flow-efficiency-safe-vsm/",
-          "summary": "How to run a Value Stream Mapping workshop to identify waste and speed up delivery cycles on the Agile Release Train.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "9/4/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "If a feature takes 10 days to be released, but engineers only spent 1 day actively coding and testing it (the rest was waiting in queue), what is the Flow Efficiency?",
@@ -779,15 +755,7 @@
           "completed": false
         }
       ],
-      "scrapedMaterials": [
-        {
-          "title": "Coaching Scrum Masters to Master the Art of Flow",
-          "url": "https://www.scrum.org/resources/blog/coaching-sm-flow",
-          "summary": "The RTE is a coach to Scrum Masters. Help them move beyond basic scrum ceremonies to focus on WIP limits, cumulative flow, and blockages.",
-          "source": "Agile Insights Library (Scraped)",
-          "date": "9/4/2026"
-        }
-      ],
+      "scrapedMaterials": [],
       "quiz": [
         {
           "question": "When a Scrum Master escalates every minor team bug to the RTE, how should the RTE respond?",
@@ -1194,35 +1162,7 @@
   },
   "scrapeLogs": [
     {
-      "timestamp": "2026-09-04T09:00:05.312Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-09-04T08:30:05.480Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-09-04T08:00:05.743Z",
-      "status": "No New Content",
-      "articlesFound": 0,
-      "articlesAdded": 0,
-      "message": "Scraper ran successfully, but no new unique articles were found."
-    },
-    {
-      "timestamp": "2026-09-04T07:30:06.236Z",
-      "status": "Success",
-      "articlesFound": 4,
-      "articlesAdded": 4,
-      "message": "Successfully scraped and mapped 4 articles to study schedule."
-    },
-    {
-      "timestamp": "2026-09-04T07:07:26.019Z",
+      "timestamp": "2026-09-04T09:27:18.344Z",
       "status": "Reset",
       "articlesFound": 0,
       "articlesAdded": 0,
